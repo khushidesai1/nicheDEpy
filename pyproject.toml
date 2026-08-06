@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nicheDEpy"
+version = "0.1.0"
+description = "Python AnnData wrapper around the original NicheDE R implementation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Khushi Desai" }
+]
+dependencies = [
+  "anndata>=0.9",
+  "numpy>=1.22",
+  "pandas>=1.5",
+  "scipy>=1.9"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "ruff>=0.5"
+]
+
+[project.urls]
+Homepage = "https://github.com/khushidesai/nicheDEpy"
+Upstream-NicheDE = "https://github.com/kaishumason/NicheDE"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nichedepy"]
+
+[tool.hatch.build]
+include = [
+  "nichedepy/**/*.py",
+  "nichedepy/r/*.R",
+  "README.md",
+  "pyproject.toml"
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
