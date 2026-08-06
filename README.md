@@ -104,3 +104,6 @@ NicheDE, including `niche_de_markers`, `niche_de_no_parallel`, `filter_nde`,
 ## Example
 
 See `examples/run_from_anndata.py` for an end-to-end template.
+
+For users translating the official NicheDE R tutorial into Python, see
+`docs/tutorial_tool_mapping.md`.
